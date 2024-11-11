@@ -1,0 +1,547 @@
+{% load static %}
+
+<div class="header">
+  <!-- Top Header -->
+  <div class="top-header">
+    <div class="container d-flex" style="justify-content:space-between; align-items: center;">
+      <ul class="left" style="margin: 0 !important;">
+        <li class="line-space" style="margin: 0">
+          <a href="/">
+            <img
+              src="https://s1.vnecdn.net/vnexpress/restruct/i/v942/v2_2019/pc/graphics/logo.svg"
+              alt="Báo VnExpress - Báo tiếng Việt nhiều người xem nhất"
+            />
+          </a>
+        </li>
+        <li class="line-space time"></li>
+      </ul>
+      <ul class="right" style="margin: 0 !important;">
+        <li class="line-space" ><a href="#" class="news">Mới nhất</a></li>
+        <li class="line-space news-area">
+          <a href="#" class="area">Tin theo khu vực</a>
+          <ul class="sub-area">
+            <li><a href="#">Hà Nội</a></li>
+            <li><a href="#">TP Hồ Chí Minh</a></li>
+          </ul>
+        </li>
+        <li class="line-space">
+          <a href="#" class="news-inter">
+            <img
+              src="https://play-lh.googleusercontent.com/XEReFv_aetLFZq2VCYEUF6cMeHLwJ3eM_WMcjucGKwdKPm8ob1_ghAdltlMwnHMEsQk"
+              alt=""
+              style="height: 16px; width: 16px"
+            />
+            International
+          </a>
+        </li>
+        <li class="line-space input-search">
+          <form form-search action="/search/" submitted="false" class="search" target="_blank">
+            <input name="q" required class="ip-search" type="text" placeholder="Tìm kiếm" />
+            <button class="btn-search" type="button" style="cursor: pointer;">
+              <i class="fa fa-search"></i>
+            </button>
+          </form>
+        </li>
+        <li class="user-noti">
+          {% if request.user.is_authenticated %}
+          <a href="/account/">
+            <i class="fa-regular fa-user me-2"></i>Tài khoản
+          </a>
+          {% else %}
+          <a href="/login/">
+            <i class="fa-regular fa-user me-2"></i>Đăng nhập
+          </a>
+          {% endif %}
+          <a href="#"><i class="far fa-bell icon-noti"></i></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <!-- End Top Header -->
+  <!-- Bot Header -->
+  <div class="bot-header">
+    <div class="container" style="max-width: 1440px">
+      <ul class="nav">
+        <li class="home">
+          <a href="#"><i class="fa fa-home"></i></a>
+        </li>
+        <li class="thoisu">
+          <a href="#">Thời sự</a>
+          <ul class="sub-nav">
+            <li><a href="#">Chính trị</a></li>
+            <li><a href="#">Dân sinh</a></li>
+            <li><a href="#">Lao động - Việc làm</a></li>
+            <li><a href="#">Giao thông</a></li>
+            <li><a href="#">Mekong</a></li>
+            <li><a href="#">Quỹ Hy vọng</a></li>
+          </ul>
+        </li>
+        <li class="gocnhin">
+          <a href="#">Góc nhìn</a>
+          <ul class="sub-nav">
+            <li><a href="#">Bình luận nhiều</a></li>
+            <li><a href="#">Chính trị & chính sách</a></li>
+            <li><a href="#">Y tế & sức khỏe</a></li>
+            <li><a href="#">Kinh doanh & quản trị</a></li>
+            <li><a href="#">Giáo dục & tri thức</a></li>
+            <li><a href="#">Môi trường</a></li>
+            <li><a href="#">Văn hóa & lối sống</a></li>
+            <li><a href="#">Covid 19</a></li>
+            <li><a href="#">Tác giả</a></li>
+          </ul>
+        </li>
+        <li class="tgioi">
+          <a href="#">Thế giới</a>
+          <ul class="sub-nav">
+            <li><a href="#">Tư liệu</a></li>
+            <li><a href="#">Phân tích</a></li>
+            <li><a href="#">Người Việt 5 châu</a></li>
+            <li><a href="#">Cuộc sống đó đây</a></li>
+            <li><a href="#">Quân sự</a></li>
+          </ul>
+        </li>
+        <li class="kdoanh">
+          <a href="#">Kinh doanh</a>
+          <ul class="sub-nav">
+            <li><a href="#">Quốc tế</a></li>
+            <li><a href="#">Doanh nghiệp</a></li>
+            <li><a href="#">Chứng khoán</a></li>
+            <li><a href="#">Ebank</a></li>
+            <li><a href="#">Vĩ mô</a></li>
+            <li><a href="#">Tiền của tôi</a></li>
+            <li><a href="#">Hàng hóa</a></li>
+          </ul>
+        </li>
+        <li class="bds">
+          <a href="#">Bất động sản</a>
+          <ul class="sub-nav">
+            <li><a href="#">Chính sách</a></li>
+            <li><a href="#">Thị trường</a></li>
+            <li><a href="#">Dự án</a></li>
+            <li><a href="#">Không gian sống</a></li>
+            <li><a href="#">Tư vấn</a></li>
+          </ul>
+        </li>
+        <li class="kh">
+          <a href="#">Khoa học</a>
+          <ul class="sub-nav">
+            <li><a href="#">Khoa học trong nước</a></li>
+            <li><a href="#">Chỉ số PII</a></li>
+            <li><a href="#">Tin tức</a></li>
+            <li><a href="#">Phát minh</a></li>
+            <li><a href="#">Ứng dụng</a></li>
+            <li><a href="#">Thế giới tự nhiên</a></li>
+            <li><a href="#">Thường thức</a></li>
+          </ul>
+        </li>
+        <li class="gtri">
+          <a href="#">Giải trí</a>
+          <ul class="sub-nav">
+            <li><a href="#">Giới sao</a></li>
+            <li><a href="#">Sách</a></li>
+            <li><a href="#">Video</a></li>
+            <li><a href="#">Phim</a></li>
+            <li><a href="#">Nhạc</a></li>
+            <li><a href="#">Thời trang</a></li>
+            <li><a href="#">Làm đẹp</a></li>
+            <li><a href="#">Sân khấu - Mỹ thuật</a></li>
+          </ul>
+        </li>
+        <li class="tthao">
+          <a href="#">Thể thao</a>
+          <ul class="sub-nav">
+            <li><a href="#">Bóng đá</a></li>
+            <li><a href="#">Lịch thi đấu</a></li>
+            <li><a href="#">Marathon</a></li>
+            <li><a href="#">Tennis</a></li>
+            <li><a href="#">Các môn khác</a></li>
+            <li><a href="#">Hậu trường</a></li>
+            <li><a href="#">Ảnh</a></li>
+            <li><a href="#">Video</a></li>
+            <li><a href="#">YBL Cup 2024</a></li>
+          </ul>
+        </li>
+        <li class="pluat">
+          <a href="#">Pháp luật</a>
+          <ul class="sub-nav">
+            <li><a href="#">Hồ sơ phá án</a></li>
+            <li><a href="#">Tư vấn</a></li>
+            <li><a href="#">Video</a></li>
+          </ul>
+        </li>
+        <li class="gduc">
+          <a href="#">Giáo dục</a>
+          <ul class="sub-nav">
+            <li><a href="#">Tin tức</a></li>
+            <li><a href="#">Tuyển sinh</a></li>
+            <li><a href="#">Chân dung</a></li>
+            <li><a href="#">Du học</a></li>
+            <li><a href="#">Thảo luận</a></li>
+            <li><a href="#">Học tiếng Anh</a></li>
+            <li><a href="#">Giáo dục 4.0</a></li>
+          </ul>
+        </li>
+        <li class="skhoe">
+          <a href="#">Sức khỏe</a>
+          <ul class="sub-nav">
+            <li><a href="#">Tin tức</a></li>
+            <li><a href="#">Các bệnh</a></li>
+            <li><a href="#">Sống khỏe</a></li>
+            <li><a href="#">Vaccine</a></li>
+          </ul>
+        </li>
+        <li class="dsong">
+          <a href="#">Đời sống</a>
+          <ul class="sub-nav">
+            <li><a href="#">Nhịp sống</a></li>
+            <li><a href="#">Tổ ấm</a></li>
+            <li><a href="#">Bài học sống</a></li>
+            <li><a href="#">Cooking</a></li>
+            <li><a href="#">Tiêu dùng</a></li>
+            <li><a href="#">Vietnam iContent 2024</a></li>
+          </ul>
+        </li>
+        <li class="dlich">
+          <a href="#">Du lịch</a>
+          <ul class="sub-nav">
+            <li><a href="#">Điểm đến</a></li>
+            <li><a href="#">Ẩm thực</a></li>
+            <li><a href="#">Dấu chân</a></li>
+            <li><a href="#">Tư vấn</a></li>
+            <li><a href="#">Cẩm nang</a></li>
+            <li><a href="#">Ảnh</a></li>
+          </ul>
+        </li>
+        <li class="shoa">
+          <a href="#">Số hóa</a>
+          <ul class="sub-nav">
+            <li><a href="#">Công nghệ</a></li>
+            <li><a href="#">Sản phẩm</a></li>
+            <li><a href="#">Blockchain</a></li>
+            <li><a href="#">Kinh nghiệm</a></li>
+            <li><a href="#">Sản phẩm tôi yêu 2024</a></li>
+          </ul>
+        </li>
+        <li class="xe">
+          <a href="#">Xe</a>
+          <ul class="sub-nav">
+            <li><a href="#">Thị trường</a></li>
+            <li><a href="#">Car Awards 2024</a></li>
+            <li><a href="#">Diễn đàn</a></li>
+            <li><a href="#">V-Car</a></li>
+            <li><a href="#">V-Bike</a></li>
+            <li><a href="#">Cầm lái</a></li>
+            <li><a href="#">Thi lý thuyết</a></li>
+            <li><a href="#">Thi mô phỏng</a></li>
+          </ul>
+        </li>
+        <li class="ykien">
+          <a href="#">Ý kiến</a>
+          <ul class="sub-nav">
+            <li><a href="#">Thời sự</a></li>
+            <li><a href="#">Đời sống</a></li>
+          </ul>
+        </li>
+        <li class="tamsu">
+          <a href="#">Tâm sự</a>
+          <ul class="sub-nav">
+            <li><a href="#">Hẹn hò</a></li>
+          </ul>
+        </li>
+        <li class="thugian">
+          <a href="#">Thư giãn</a>
+          <ul class="sub-nav">
+            <li><a href="#">Cười</a></li>
+            <li><a href="#">Đố vui</a></li>
+            <li><a href="#">Chuyện lạ</a></li>
+            <li><a href="#">Crossword</a></li>
+            <li><a href="#">Thú cưng</a></li>
+          </ul>
+        </li>
+        <li class="bar" style="display: flex; align-items: center;">
+          <div style="cursor: pointer;"><i class="fas fa-bars"></i></div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <!-- End Bot Header -->
+  <!-- Mega Menu -->
+  <div class="mega-menu container">
+    <div class="header-megamenu">
+      <p>Tất cả chuyên mục</p>
+      <a class="close-btn" style="cursor: pointer">
+        <span>Đóng</span>
+        <i class="fas fa-times" style="font-size: 24px"></i>
+      </a>
+    </div>
+    <div class="menu-left left" style="height: 599.6px">
+      <div class="menu-column">
+        <h3>Thời sự</h3>
+        <ul>
+          <li><a href="#">Chính trị</a></li>
+          <li><a href="#">Dân sinh</a></li>
+          <li><a href="#">Lao động - Việc làm</a></li>
+          <li><a href="#">Giao thông</a></li>
+          <li class="line-hide hide"><a href="#">Mekong</a></li>
+          <li class="line-hide hide"><a href="#">Quỹ Hy vọng</a></li>
+          <li class="line-more">
+            <a href="#" class="more" onclick="showMore(this)">Xem thêm</a>
+          </li>
+        </ul>
+      </div>
+      <div class="menu-column">
+        <h3>Góc nhìn</h3>
+        <ul>
+          <li><a href="#">Bình luận nhiều</a></li>
+          <li><a href="#">Chính trị & chính sách</a></li>
+          <li><a href="#">Y tế & sức khoẻ</a></li>
+          <li><a href="#">Kinh doanh & quản trị</a></li>
+          <li class="line-hide hide"><a href="#">Giáo dục & tri thức</a></li>
+          <li class="line-hide hide"><a href="#">Môi trường</a></li>
+          <li class="line-hide hide"><a href="#">Văn hóa & lối sống</a></li>
+          <li class="line-hide hide"><a href="#">Covid 19</a></li>
+          <li class="line-hide hide"><a href="#">Tác giả</a></li>
+          <li class="line-more">
+            <a href="#" class="more" onclick="showMore(this)">Xem thêm</a>
+          </li>
+        </ul>
+      </div>
+      <div class="menu-column">
+        <h3>Thế giới</h3>
+        <ul>
+          <li><a href="#">Tư liệu</a></li>
+          <li><a href="#">Dân sinh</a></li>
+          <li><a href="#">Người Việt 5 châu</a></li>
+          <li><a href="#">Cuộc sống đó đây</a></li>
+          <li class="line-hide hide"><a href="#">Quân sự</a></li>
+          <li class="line-more">
+            <a href="#" class="more" onclick="showMore(this)">Xem thêm</a>
+          </li>
+        </ul>
+      </div>
+      <div class="menu-column">
+        <h3>Kinh doanh</h3>
+        <ul>
+          <li><a href="#">Quốc tế</a></li>
+          <li><a href="#">Doanh nghiệp</a></li>
+          <li><a href="#">Chứng khoán</a></li>
+          <li><a href="#">Ebank</a></li>
+          <li class="line-hide hide"><a href="#">Vĩ mô</a></li>
+          <li class="line-hide hide"><a href="#">Tiền của tôi</a></li>
+          <li class="line-hide hide"><a href="#">Hàng hóa</a></li>
+          <li class="line-more">
+            <a href="#" class="more" onclick="showMore(this)">Xem thêm</a>
+          </li>
+        </ul>
+      </div>
+      <div class="menu-column">
+        <h3>Bất động sản</h3>
+        <ul>
+          <li><a href="#">Chính sách</a></li>
+          <li><a href="#">Thị trường</a></li>
+          <li><a href="#">Dự án</a></li>
+          <li><a href="#">Không gian sống</a></li>
+          <li class="line-hide hide"><a href="#">Tư vấn</a></li>
+          <li class="line-more">
+            <a href="#" class="more" onclick="showMore(this)">Xem thêm</a>
+          </li>
+        </ul>
+      </div>
+      <div class="menu-column">
+        <h3>Khoa học</h3>
+        <ul>
+          <li><a href="#">Khoa học trong nước</a></li>
+          <li><a href="#">Chỉ số PII</a></li>
+          <li><a href="#">Tin tức</a></li>
+          <li><a href="#">Phát minh</a></li>
+          <li class="line-hide hide"><a href="#">Ứng dụng</a></li>
+          <li class="line-hide hide"><a href="#">Thế giới tự nhiên</a></li>
+          <li class="line-hide hide"><a href="#">Thưởng thức</a></li>
+          <li class="line-more">
+            <a href="#" class="more" onclick="showMore(this)">Xem thêm</a>
+          </li>
+        </ul>
+      </div>
+      <div class="menu-column">
+        <h3>Giải trí</h3>
+        <ul>
+          <li><a href="#">Giới sao</a></li>
+          <li><a href="#">Sách</a></li>
+          <li><a href="#">Video</a></li>
+          <li><a href="#">Phim</a></li>
+          <li class="line-hide hide"><a href="#">Nhạc</a></li>
+          <li class="line-hide hide"><a href="#">Thời trang</a></li>
+          <li class="line-hide hide"><a href="#">Làm đẹp</a></li>
+          <li class="line-hide hide"><a href="#">Sân khấu - Mỹ thuật</a></li>
+          <li class="line-more">
+            <a href="#" class="more" onclick="showMore(this)">Xem thêm</a>
+          </li>
+        </ul>
+      </div>
+      <div class="menu-column">
+        <h3>Thể thao</h3>
+        <ul>
+          <li><a href="#">Bóng đá</a></li>
+          <li><a href="#">Lịch thi đấu</a></li>
+          <li><a href="#">Marathon</a></li>
+          <li><a href="#">Tennis</a></li>
+          <li class="line-hide hide"><a href="#">Các môn khác</a></li>
+          <li class="line-hide hide"><a href="#">Hậu trường</a></li>
+          <li class="line-hide hide"><a href="#">Ảnh</a></li>
+          <li class="line-hide hide"><a href="#">Video</a></li>
+          <li class="line-hide hide"><a href="#">YBL Cup 2024</a></li>
+          <li class="line-more">
+            <a href="#" class="more" onclick="showMore(this)">Xem thêm</a>
+          </li>
+        </ul>
+      </div>
+      <div class="menu-column">
+        <h3>Pháp luật</h3>
+        <ul>
+          <li><a href="#">Hồ sơ phá án</a></li>
+          <li><a href="#">Tư vấn</a></li>
+          <li><a href="#">Video</a></li>
+        </ul>
+      </div>
+      <div class="menu-column">
+        <h3>Giáo dục</h3>
+        <ul>
+          <li><a href="#">Tin tức</a></li>
+          <li><a href="#">Tuyển sinh</a></li>
+          <li><a href="#">Chân dung</a></li>
+          <li><a href="#">Du học</a></li>
+          <li class="line-hide hide"><a href="#">Thảo luận</a></li>
+          <li class="line-hide hide"><a href="#">Học tiếng Anh</a></li>
+          <li class="line-hide hide"><a href="#">Giáo dục 4.0</a></li>
+          <li class="line-more">
+            <a href="#" class="more" onclick="showMore(this)">Xem thêm</a>
+          </li>
+        </ul>
+      </div>
+      <div class="menu-column">
+        <h3>Sức khỏe</h3>
+        <ul>
+          <li><a href="#">Tin tức</a></li>
+          <li><a href="#">Các bệnh</a></li>
+          <li><a href="#">Sống khỏe</a></li>
+          <li><a href="#">Vaccine</a></li>
+        </ul>
+      </div>
+      <div class="menu-column">
+        <h3>Đời sống</h3>
+        <ul>
+          <li><a href="#">Nhịp sống</a></li>
+          <li><a href="#">Tổ ấm</a></li>
+          <li><a href="#">Bài học sống</a></li>
+          <li><a href="#">Cooking</a></li>
+          <li class="line-hide hide"><a href="#">Tiêu dùng</a></li>
+          <li class="line-hide hide"><a href="#">Vietnam iContent 2024</a></li>
+          <li class="line-more">
+            <a href="#" class="more" onclick="showMore(this)">Xem thêm</a>
+          </li>
+        </ul>
+      </div>
+      <div class="menu-column">
+        <h3>Du lịch</h3>
+        <ul>
+          <li><a href="#">Điểm đến</a></li>
+          <li><a href="#">Ẩm thực</a></li>
+          <li><a href="#">Dấu chân</a></li>
+          <li><a href="#">Tư vấn</a></li>
+          <li class="line-hide hide"><a href="#">Cẩm nang</a></li>
+          <li class="line-hide hide"><a href="#">Ảnh</a></li>
+          <li class="line-more">
+            <a href="#" class="more" onclick="showMore(this)">Xem thêm</a>
+          </li>
+        </ul>
+      </div>
+      <div class="menu-column">
+        <h3>Số hóa</h3>
+        <ul>
+          <li><a href="#">Công nghệ</a></li>
+          <li><a href="#">Sản phẩm</a></li>
+          <li><a href="#">Blockchain</a></li>
+          <li><a href="#">Kinh nghiệm</a></li>
+          <li class="line-hide hide"><a href="#">Sản phẩm tôi yêu 2024</a></li>
+          <li class="line-more">
+            <a href="#" class="more" onclick="showMore(this)">Xem thêm</a>
+          </li>
+        </ul>
+      </div>
+      <div class="menu-column">
+        <h3>Xe</h3>
+        <ul>
+          <li><a href="#">Thị trường</a></li>
+          <li><a href="#">Car Awards 2024</a></li>
+          <li><a href="#">Diễn đàn</a></li>
+          <li><a href="#">V-Car</a></li>
+          <li class="line-hide hide"><a href="#">V-Bike</a></li>
+          <li class="line-hide hide"><a href="#">Cầm lái</a></li>
+          <li class="line-hide hide"><a href="#">Thi lý thuyết</a></li>
+          <li class="line-hide hide"><a href="#">Thi mô phỏng</a></li>
+          <li class="line-more">
+            <a href="#" class="more" onclick="showMore(this)">Xem thêm</a>
+          </li>
+        </ul>
+      </div>
+      <div class="menu-column">
+        <h3>Ý kiến</h3>
+        <ul>
+          <li><a href="#">Thời sự</a></li>
+          <li><a href="#">Đời sống</a></li>
+        </ul>
+      </div>
+      <div class="menu-column">
+        <h3>Tâm sự</h3>
+        <ul>
+          <li><a href="#">Hẹn hò</a></li>
+        </ul>
+      </div>
+      <div class="menu-column">
+        <h3>Thư giãn</h3>
+        <ul>
+          <li><a href="#">Cười</a></li>
+          <li><a href="#">Đố vui</a></li>
+          <li><a href="#">Chuyện lạ</a></li>
+          <li><a href="#">Crossword</a></li>
+          <li class="line-hide hide"><a href="#">Thú cưng</a></li>
+          <li class="line-more">
+            <a href="#" class="more" onclick="showMore(this)">Xem thêm</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="menu-right">
+      <ul class="list-menu">
+        <li>Spotlight</li>
+        <li>Ảnh</li>
+        <li>Infographics</li>
+      </ul>
+      <ul class="list-menu">
+        <li>Mới nhất</li>
+        <li>Xem nhiều</li>
+        <li>Tin nóng</li>
+      </ul>
+      <ul class="list-item">
+        <li>Rao vặt</li>
+        <li>Startup</li>
+      </ul>
+      <div class="contact-inf">
+        <p>Liên hệ</p>
+        <a href="#" title="Liên hệ tòa soạn">
+          <i class="fas fa-envelope" style="color: #bdbdbd"></i>
+          Tòa soạn
+        </a>
+        <a href="#" title="Liên hệ quảng cáo">
+          <img
+            src="{% static 'imgs/ads.png' %}"
+            alt=""
+            style="width: 13px; height: 14px"
+          />
+          Quảng cáo
+        </a>
+      </div>
+    </div>
+  </div>
+  <!-- End Mega Menu -->
+</div>
