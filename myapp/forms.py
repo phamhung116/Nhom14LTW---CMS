@@ -27,8 +27,8 @@ class SignUpForm(UserCreationForm):
                'last_name': forms.TextInput(attrs={'placeholder': ' '})}
     labels = {'email': 'Email', 
               'username': 'Tên đăng nhập',
-              'last_name': 'Tên', 
-              'first_name': 'Họ',}
+              'last_name': 'Họ', 
+              'first_name': 'Tên',}
 
   def __init__(self, *args, **kwargs):
     super(SignUpForm, self).__init__(*args, **kwargs)
